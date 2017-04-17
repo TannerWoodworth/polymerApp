@@ -1,0 +1,73 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="my-contact-card.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="contact-list">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      h2 {
+
+      }
+    </style>
+    <h1>Contacts List</h1>
+    <template is="dom-repeat" items="{{contacts}}">
+      <my-contact-card name="{{item.name}}" email="{{item.email}}" img="{{item.img}}"></my-contact-card>
+    </template>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'contact-list',
+      ready: function() {
+      this.contacts = [
+      {
+        name: "Jack",
+        email: "jack@test.net",
+        img: "https://randomuser.me/api/portraits/men/71.jpg"
+      },
+      {
+        name: "May ",
+        email: "scott@test.net",
+        img: "https://randomuser.me/api/portraits/women/79.jpg"
+      },
+      {
+        name: "Ralph",
+        email: "ralph@test.net",
+        img: "https://randomuser.me/api/portraits/men/51.jpg"
+      },
+      {
+        name: "Kimberly",
+        email: "ralph@test.net",
+        img: "https://randomuser.me/api/portraits/women/51.jpg"
+      },
+      {
+        name: "Taylor",
+        email: "ralph@test.net",
+        img: "https://randomuser.me/api/portraits/women/29.jpg"
+      },
+      {
+        name: "Ralph",
+        email: "ralph@test.net",
+        img: "https://randomuser.me/api/portraits/men/51.jpg"
+      }
+      ]
+    }
+    });
+  </script>
+</dom-module>
