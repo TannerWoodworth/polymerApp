@@ -27,7 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
     <h1>Contacts List</h1>
     <template is="dom-repeat" items="{{contacts}}">
-      <my-contact-card name="{{item.name}}" email="{{item.email}}" img="{{item.img}}"></my-contact-card>
+      <my-contact-card name="{{item.name}}" email="{{item.email}}" phone="{{item.phone}}" img="{{item.img}}"></my-contact-card>
     </template>
   </template>
 
@@ -37,34 +37,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       ready: function() {
       this.contacts = [
       {
-        name: "Jack",
+        name: "Jack Harris",
         email: "jack@test.net",
+        phone: "(000) 555-3333",
         img: "https://randomuser.me/api/portraits/men/71.jpg"
       },
       {
-        name: "May ",
-        email: "scott@test.net",
+        name: "May Belle",
+        email: "may@test.net",
+        phone: "(000) 777-4444",
         img: "https://randomuser.me/api/portraits/women/79.jpg"
       },
       {
-        name: "Ralph",
+        name: "Ralph Kimbell",
         email: "ralph@test.net",
+        phone: "(000) 222-1111",
         img: "https://randomuser.me/api/portraits/men/51.jpg"
       },
       {
-        name: "Kimberly",
-        email: "ralph@test.net",
+        name: "Kimberly Turn",
+        email: "kimberly@test.net",
+        phone: "(000) 888-8888",
         img: "https://randomuser.me/api/portraits/women/51.jpg"
       },
       {
-        name: "Taylor",
-        email: "ralph@test.net",
+        name: "Taylor Lynn",
+        email: "taylor@test.net",
+        phone: "(000) 777-6666",
         img: "https://randomuser.me/api/portraits/women/29.jpg"
       },
       {
-        name: "Ralph",
-        email: "ralph@test.net",
-        img: "https://randomuser.me/api/portraits/men/51.jpg"
+        name: "Timothy Brock",
+        email: "timothy@test.net",
+        phone: "(000) 111-0000",
+        img: "https://randomuser.me/api/portraits/men/23.jpg"
       }
       ]
     }

@@ -16,25 +16,50 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-
         padding: 10px;
       }
 
-      h2 {
+      .card-head {
+        display: block;
+        position: relative;
+        border-bottom: solid 1px #dedede;
+        padding-bottom: 10px;
+      }
 
+      h2 {
+        display: inline-block;
+        margin: 0 10px;
+        position: absolute;
+        top: 43%;
+        transform: translateY(-50%);
+      }
+      
+      p{ 
+        color: #444;
+      }
+      .contact-type {
+        color: #999;
       }
     </style>
     <div class="card">
-      <div class="circle">1</div>
-      <h2>View One</h2>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+      <div class="card-head">
+        <img src="{{img}}" class="circle" alt="{{name}}'s contact image">
+        <h2 class="v-center">{{name}}</h2>
+      </div>
+      <p><span class="contact-type">Email: </span> {{email}}</p>
+      <p><span class="contact-type">Phone: </span> {{phone}}</p>
     </div>
   </template>
 
   <script>
     Polymer({
       is: 'my-contact-card',
+      properties: {
+      name: String,
+      email: String,
+      phone: String,
+      img: String
+    }
     });
   </script>
 </dom-module>
