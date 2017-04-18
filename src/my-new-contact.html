@@ -10,6 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="my-contact-card.html">
+<link rel="import" href="my-contact-list.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-new-contact">
@@ -23,18 +24,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       input[type=text] {
         border: none;
         border-bottom: 2px solid #dedede;
-        padding: 5px 0;
-        font-size: 1.1em;
+        padding: 5px 3px;
+        font-size: 16px;
+        margin-bottom: 10px;
       }
+      
+      .btn {
+        display: table;
+        font-size: 16px;
+        color: white;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #5e35b1;
+        transition: background-color 200ms;
+        border: 0px;
+      }
+
+      .btn:hover {
+        background-color: #7e57c2;
+        cursor: pointer;
+      }
+
+      p { margin-bottom: 0px; }
 
     </style>
     <h1>Add New Contact</h1>
 
     <div class="card">
       <p><span class="contact-type">Name: </span></p> <input type="text" value="{{nameInput::input}}">
-      <p><span class="contact-type">Image Link: </span></p> <input type="text" value="{{imgInput::change}}">
+      <p><span class="contact-type">Image Link: Ex: https://randomuser.me/api/portraits/lego/1.jpg</span></p> <input type="text" value="{{imgInput::change}}">
       <p><span class="contact-type">Email: </span></p> <input type="text" value="{{emailInput::input}}">
       <p><span class="contact-type">Phone: </span></p> <input type="text" value="{{phoneInput::input}}">
+
+      <button class="btn" on-click="addContact">Add Contact</abutton>
     </div>
 
     <my-contact-card name="{{nameInput}}" email="{{emailInput}}" phone="{{phoneInput}}" img="{{imgInput}}"></my-contact-card>
@@ -44,6 +66,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script>
     Polymer({
       is: 'my-new-contact',
+      properties: {
+
+      },
+
+      addContact: function() {
+        alert('Added Contact');
+        var contactList = this.contacts,
+            newContact = {
+          name: this.nameInput,
+          email: this.emailInput,
+          phone: this.phoneInput,
+          img: this.imgInput
+        }
+        console.log(newContact);
+      }
     });
   </script>
 </dom-module>

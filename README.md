@@ -4,7 +4,9 @@ TODO: Write install instructions
 
 ## Install Dependencies 
 
+Run the following command after making sure you have node and Bower installed
 
+    bower install
 
 ## Start the development server
 
