@@ -16,38 +16,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-        padding: 10px;
-      }
-
-      .card-head {
-        display: block;
-        position: relative;
-        border-bottom: solid 1px #dedede;
-        padding-bottom: 10px;
-      }
-
-      h2 {
-        display: inline-block;
-        margin: 0 10px;
-        position: absolute;
-        top: 43%;
-        transform: translateY(-50%);
-      }
-      
-      p{ 
-        color: #444;
-      }
-      .contact-type {
-        color: #999;
+        /*padding: 10px;*/
       }
     </style>
     <div class="card">
       <div class="card-head">
-        <img src="{{img}}" class="circle" alt="{{name}}'s contact image">
-        <h2 class="v-center">{{name}}</h2>
+        <div class="circle"><img src="[[img]]" alt="[[name]]'s contact image"></div>
+        <h2 class="v-center">[[name]]</h2>
       </div>
-      <p><span class="contact-type">Email: </span> {{email}}</p>
-      <p><span class="contact-type">Phone: </span> {{phone}}</p>
+      <p><span class="contact-type">Email: </span> [[email]]</p>
+      <p><span class="contact-type">Phone: </span> [[phone]]</p>
     </div>
   </template>
 

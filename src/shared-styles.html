@@ -28,17 +28,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         width: 64px;
         height: 64px;
         text-align: center;
-        color: #555;
+        color: #ddd;
         border-radius: 50%;
         background: #ddd;
         font-size: 30px;
         line-height: 64px;
+        overflow: hidden;
+        margin: -1px;
+      }
+
+      .circle img {
+        margin: -2px;
+        width: 102%;
+        height: auto;
       }
 
       h1 {
         margin: 16px 10px;
         color: #212121;
         font-size: 22px;
+      }
+      
+      h2 {
+        display: inline-block;
+        margin: 0 10px;
+        position: absolute;
+        top: 43%;
+        transform: translateY(-50%);
+      }
+      
+      p, h2 { 
+        color: #444;
+      }
+
+      .card-head {
+        display: block;
+        position: relative;
+        border-bottom: solid 1px #dedede;
+        padding-bottom: 10px;
+      }
+
+      .contact-type {
+        color: #999;
       }
     </style>
   </template>

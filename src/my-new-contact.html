@@ -9,29 +9,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="my-contact-card.html">
 <link rel="import" href="shared-styles.html">
 
-<dom-module id="my-view2">
+<dom-module id="my-new-contact">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
-
         padding: 10px;
       }
+
+      input[type=text] {
+        border: none;
+        border-bottom: 2px solid #dedede;
+        padding: 5px 0;
+        font-size: 1.1em;
+      }
+
     </style>
+    <h1>Add New Contact</h1>
 
     <div class="card">
-      <div class="circle">2</div>
-      <h1>View Two</h1>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+      <p><span class="contact-type">Name: </span></p> <input type="text" value="{{nameInput::input}}">
+      <p><span class="contact-type">Image Link: </span></p> <input type="text" value="{{imgInput::change}}">
+      <p><span class="contact-type">Email: </span></p> <input type="text" value="{{emailInput::input}}">
+      <p><span class="contact-type">Phone: </span></p> <input type="text" value="{{phoneInput::input}}">
     </div>
+
+    <my-contact-card name="{{nameInput}}" email="{{emailInput}}" phone="{{phoneInput}}" img="{{imgInput}}"></my-contact-card>
+
   </template>
 
   <script>
     Polymer({
-      is: 'my-view2',
+      is: 'my-new-contact',
     });
   </script>
 </dom-module>
